@@ -14,7 +14,16 @@ function GameOfLife() {
     }
 
     this.printState = function() {
-    	this.printArray(this.currentState);
+    	//this.printArray(this.currentState);
+    	var str = ""
+		_.each(this.currentState, function(i) {
+			_.each(i, function(j) {
+				str += j;
+			});
+			str += "\n";
+		});
+		//return str;
+		console.log(str);
     }
 
 	this.init = function(x, y) {
@@ -42,6 +51,8 @@ function GameOfLife() {
 		if(this.currentState[x+1][y+1] === 1) count++;
 		return count;
 	}
+	this.tick = function() {
+	}
 }
 
 var g1 = new GameOfLife();
@@ -49,5 +60,4 @@ g1.init(10, 10);
 g1.addAlive(5,5);
 g1.addAlive(5,6);
 g1.addAlive(6,5);
-console.log(g1.numOfAliveNeighbors(5,5));
 g1.printState();
