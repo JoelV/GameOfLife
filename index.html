@@ -1,9 +1,150 @@
 <!doctype html>
 <html>
 	<head>
+		<title>The Game of Life</title>
+		<style>
+			.block {
+				background-color: #E7DCDC;
+				border: 1px solid black;
+				width: 10px;
+				height: 10px;
+			}
+			.color {
+				background-color: #534E4E;
+			}
+			table {
+				border-collapse: collapse;
+			}
+		</style>
 	</head>
 	<body>
+		<div ng-app = "gameApp">
+			<table ng-controller = "GameCtrl">
+				<tr>
+					<td><div class = "block" ng-click = "chngColor()"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>	
+				<tr>
+				<tr>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>	
+				<tr>
+				<tr>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>	
+				<tr>
+				<tr>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>	
+				<tr>
+				<tr>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>	
+				<tr>
+				<tr>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>	
+				<tr>
+				<tr>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>	
+				<tr>
+				<tr>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>	
+				<tr>
+				<tr>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>	
+				<tr>
+				<tr>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>
+					<td><div class = "block"></div></td>	
+				<tr>
+			</table>
+		</div>
 		<script src="http://documentcloud.github.io/underscore/underscore-min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 		<script type = "text/javascript" src = "life.js"></script>
+		<script type = "text/javascript" src = "gameApp.js"></script>
 	</body>
 </html>

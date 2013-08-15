@@ -1,18 +1,6 @@
 function GameOfLife() {
 	this.currentState = [];
 
-    this.printArray = function(arry) {
-    	var str = ""
-    	for(var i = 0; i < arry.length; i++) {
-    		for(var j = 0; j < arry[i].length; j++) {
-    			str += arry[i][j] + " ";
-    			//console.log(arry[i][j]);
-    		}	
-    		str += "\n";
-    	}
-    	console.log(str);
-    }
-
     this.printState = function() {
     	//this.printArray(this.currentState);
     	var str = ""
@@ -79,12 +67,18 @@ function GameOfLife() {
 
 var g1 = new GameOfLife();
 g1.init(10, 10);
-
 g1.addAlive(5,5);
 g1.addAlive(5,6);
-g1.addAlive(6,5);
-g1.addAlive(4,5);
+g1.addAlive(5,7)
 //console.log(g1.numOfAliveNeighbors(5,5));
+g1.printState();
+g1.tick();
+g1.printState();
+g1.tick();
+g1.printState();
+g1.tick();
+g1.printState();
+g1.tick();
 g1.printState();
 g1.tick();
 g1.printState();
