@@ -17,134 +17,35 @@
 			}
 		</style>
 	</head>
-	<body>
-		<div ng-app = "gameApp">
-			<table ng-controller = "GameCtrl">
-				<tr>
-					<td><div class = "block" ng-click = "chngColor()"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>	
-				<tr>
-				<tr>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>	
-				<tr>
-				<tr>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>	
-				<tr>
-				<tr>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>	
-				<tr>
-				<tr>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>	
-				<tr>
-				<tr>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>	
-				<tr>
-				<tr>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>	
-				<tr>
-				<tr>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>	
-				<tr>
-				<tr>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>	
-				<tr>
-				<tr>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>
-					<td><div class = "block"></div></td>	
-				<tr>
-			</table>
+	<body ng-app = 'gameApp'>
+		<div ng-controller = 'GameCtrl'>
+			Initialize Matrix
+			<p>
+				Size Width (x)
+				<input type = 'text' ng-model = 'xSize' size = '4'>
+		    </p>
+		    <p>
+		    	Size Height (y) 
+		    	<input type = 'text' ng-model = 'ySize' size = '4'>
+		    </p>
+		    <button ng-click = 'init({xSize: xSize}, {ySize: ySize})'>Enter Dimensions</button><br/><br/>
+
+			Add Live Cell
+			<p>
+				X-Coordinate
+				<input type = 'text' ng-model = 'xCoord' size = '4'>
+			</p>
+			<p>
+				Y-Coordinate
+				<input type = 'text' ng-model = 'yCoord' size = '4'>
+			</p>
+			<button ng-click = 'addCell({xCoord: xCoord}, {yCoord: yCoord})'>Add Live Cell</button><br/>
+			<pre>{{show()}}</pre>
+			<button ng-click = 'tick()'>Tick</button>
 		</div>
 		<script src="http://documentcloud.github.io/underscore/underscore-min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-		<script type = "text/javascript" src = "life.js"></script>
+		<!--<script type = "text/javascript" src = "life.js"></script>-->
 		<script type = "text/javascript" src = "gameApp.js"></script>
 	</body>
 </html>
