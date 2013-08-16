@@ -1,10 +1,10 @@
 function GameOfLife() {
-	this.currentState = [];
+	var currentState = [];
 
     this.printState = function() {
     	//this.printArray(this.currentState);
     	var str = ""
-		_.each(this.currentState, function(i) {
+		_.each(currentState, function(i) {
 			_.each(i, function(j) {
 				str += " " + j;
 			});
@@ -18,28 +18,28 @@ function GameOfLife() {
 	this.init = function(x, y) {
 		//initialize arrays inside currentState
 		for(var i = 0; i < x; i++) {
-			this.currentState[i] = [];
+			currentState[i] = [];
 			for(var j = 0; j < y; j++) {
-				this.currentState[i][j] = 0;
+				currentState[i][j] = 0;
 			}
 		}
 
 		//this.printArray(this.currentState);
 	}
 	this.addAlive = function(x, y) {
-		this.currentState[x][y] = 1;
+		currentState[x][y] = 1;
 	}
 	this.numOfAliveNeighbors = function(x, y) {
 		var count = 0;
 		//console.log(x);
-		if((x !== 0 && y !== 0)&& this.currentState[x-1][y-1] === 1) count++;
-		if(y !== 0 && this.currentState[x][y-1] === 1) count++;
-		if((x < this.currentState.length - 1 && y !== 0) && this.currentState[x+1][y-1] === 1) count++;
-		if(x !== 0 && this.currentState[x-1][y] === 1) count++;
-		if(x < this.currentState.length - 1&& this.currentState[x+1][y] === 1) count++;
-		if((x != 0 && y < this.currentState[x].length) && this.currentState[x-1][y+1] === 1) count++;
-		if(y < this.currentState[x].length - 1 && this.currentState[x][y+1] === 1) count++;
-		if((x < this.currentState.length - 1 && y < this.currentState[x].length) && this.currentState[x+1][y+1] === 1) count++;
+		if((x !== 0 && y !== 0)&& currentState[x-1][y-1] === 1) count++;
+		if(y !== 0 && currentState[x][y-1] === 1) count++;
+		if((x < currentState.length - 1 && y !== 0) && currentState[x+1][y-1] === 1) count++;
+		if(x !== 0 && currentState[x-1][y] === 1) count++;
+		if(x < currentState.length - 1 && currentState[x+1][y] === 1) count++;
+		if((x != 0 && y < currentState[x].length) && currentState[x-1][y+1] === 1) count++;
+		if(y < currentState[x].length - 1 && currentState[x][y+1] === 1) count++;
+		if((x < currentState.length - 1 && y < currentState[x].length) && currentState[x+1][y+1] === 1) count++;
 		return count;
 	}
 	this.tick = function() {
@@ -52,7 +52,7 @@ function GameOfLife() {
 			}
 		}
         */
-		_.each(this.currentState, function(arryI, i) {
+		_.each(currentState, function(arryI, i) {
 			newState[i] = [];
 			_.each(arryI, function(arryIJ, j){
 				var aliveNeighbors = g1.numOfAliveNeighbors(i, j);
@@ -66,7 +66,7 @@ function GameOfLife() {
 			});
 		});
 		
-		this.currentState = newState;
+		currentState = newState;
 	}
 	
 }
