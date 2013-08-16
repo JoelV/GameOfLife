@@ -22,7 +22,7 @@ function GameOfLife() {
 				this.currentState[i][j] = 0;
 			}
 		}
-		
+
 		//this.printArray(this.currentState);
 	}
 	this.addAlive = function(x, y) {
@@ -43,13 +43,16 @@ function GameOfLife() {
 	}
 	this.tick = function() {
 		var newState = [];
+		/*
 		for(var i = 0; i < this.currentState.length; i++) {
 			newState[i] = [];
 			for(var j = 0; j < this.currentState[i].length; j++) {
 				newState[i][j] = 0;
 			}
 		}
+        */
 		_.each(this.currentState, function(arryI, i) {
+			newState[i] = [];
 			_.each(arryI, function(arryIJ, j){
 				var aliveNeighbors = g1.numOfAliveNeighbors(i, j);
 				if(arryIJ === 0 && aliveNeighbors === 3) newState[i][j] = 1;
@@ -58,6 +61,7 @@ function GameOfLife() {
 					else if(aliveNeighbors === 3 || aliveNeighbors === 2) newState[i][j] = 1;
 					else newState[i][j] = 0;
 				}
+				else newState[i][j] = 0;
 			});
 		});
 		
